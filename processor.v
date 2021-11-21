@@ -147,12 +147,11 @@ module processor(
 		 pc <= jump;
 	 end
 	 
-	 assign ctrl_writeEnable = is_jal ? ~clock : (~clock && (is_rType || is_addi || is_setx || is_lw));
+	 assign ctrl_writeEnable = ~clock && (is_rType || is_addi || is_setx || is_lw || is_jal);
 	 
 	 assign address_imem  = pc[11:0];
 	 
-	 assign jump          = is_jiType ? targetExtended : (is_jr ? data_readRegA : (jump_bne || jump_blt ? (addressExtended + signExtended + 1'b1) : (addressExtended + 1'b1)));
-//    assign jump = is_j ? targetExtended : addressExtended + 1'b1;
+	 assign jump          = is_jiType ? targetExtended : (is_jr ? data_readRegA : ((jump_bne || jump_blt) ? (addressExtended + signExtended + 1'b1) : (addressExtended + 1'b1)));
 	 
 	 assign ctrl_readRegA = (is_bne || is_jr || is_sw || is_blt)  ? rd : ((is_rType || is_addi || is_lw) ? rs : 5'h1E); // in case of bex its 1E
 	 
