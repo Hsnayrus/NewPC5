@@ -92,9 +92,9 @@ module processor(
 
     /* YOUR CODE STARTS HERE */
 	 
-	 wire clk4;
+	 wire clk2;
 	 wire is_rType, is_addi, is_sub, is_add, is_or, is_sll, is_sra, is_sw, is_lw, is_j, is_bne, is_jal, is_jr, is_blt, is_bex, is_setx, is_jiType, rstatus, jump_bne, addOverflow, subOverflow, addiOverflow;
-	 wire isNotEqual, isLessThan, overflow;
+	 wire isNotEqual, isLessThan, overflow, jump_blt;
 	 wire [4:0] Opcode, rd, rs, rt, shamt, ALU_op;
 	 wire[15:0] immediate;
 	 wire[26:0] target; // target is jump address for branching
@@ -128,6 +128,7 @@ module processor(
 	 assign addiOverflow = is_addi && overflow;
 	 
 	 assign jump_bne  = is_bne && isNotEqual;
+	 assign jump_blt  = is_blt && isLessThan;
 	 
 	 assign rstatus = ~(data_readRegA == 32'h00000000);
 	 assign is_jiType = is_j || is_jal || (is_bex && rstatus);
@@ -138,20 +139,22 @@ module processor(
 	 assign signExtended[31:16] = immediate[15] ? 16'hFFFF : 16'h0000;
 	 assign addressExtended     = {20'h00000, address_imem};
 	 
+	 freqBy2(clock, reset, clk2);
+	 
 	 reg[31:0] pc;
 	 
 	 always @(posedge clock) begin
-		#1 pc <= jump;
+		 pc <= jump;
 	 end
 	 
-	 assign ctrl_writeEnable = ~clock && (is_rType || is_addi || is_jal || is_setx || is_lw);
+	 assign ctrl_writeEnable = is_jal ? ~clock : (~clock && (is_rType || is_addi || is_setx || is_lw));
 	 
 	 assign address_imem  = pc[11:0];
 	 
-	 assign jump          = is_jiType ? targetExtended : (is_jr ? data_readRegA : (jump_bne ? (signExtended + 1'b1) : (addressExtended + 1'b1)));
+	 assign jump          = is_jiType ? targetExtended : (is_jr ? data_readRegA : (jump_bne || jump_blt ? (addressExtended + signExtended + 1'b1) : (addressExtended + 1'b1)));
 //    assign jump = is_j ? targetExtended : addressExtended + 1'b1;
 	 
-	 assign ctrl_readRegA = (is_bne || is_jr || is_sw)  ? rd : ((is_rType || is_addi || is_lw) ? rs : 5'h1E); // in case of bex its 1E
+	 assign ctrl_readRegA = (is_bne || is_jr || is_sw || is_blt)  ? rd : ((is_rType || is_addi || is_lw) ? rs : 5'h1E); // in case of bex its 1E
 	 
 	 assign ctrl_readRegB = (is_bne || is_blt) ? rs : (is_rType ? rt : 5'hzz);                  // rs in case of bne	 
 	 

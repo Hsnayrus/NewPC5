@@ -21,11 +21,13 @@ module skeleton(clock, reset, imem_clock, dmem_clock, processor_clock, regfile_c
     output imem_clock, dmem_clock, processor_clock, regfile_clock;
 	 output[4: 0] ctrlWriteReg;
 	 output[31:0] dataWriteReg;
-	 wire clk2, clk4;
+	 wire clk2, clk3, clk4, clk6;
 	 output[11:0] pc;
 	 
-	 freqBy2 f1(clock, reset, clk2);
-	 clkDiv4 c1(clock, reset, clk4);
+	 freqBy2  f1(clock, reset, clk2);
+	 clk_div3 s1(clock, reset, clk3);
+	 clkDiv4  c1(clock, reset, clk4);
+	 freqBy2  s2(clk3,  reset, clk6);
 	 
 	 assign processor_clock = clk4;
 	 assign regfile_clock   = clk2;

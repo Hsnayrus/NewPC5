@@ -1,5 +1,5 @@
 Analysis & Synthesis report for NewPC5
-Sun Nov 21 01:03:28 2021
+Sun Nov 21 17:17:13 2021
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -16,17 +16,19 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
  10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Source assignments for imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated
- 14. Source assignments for dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated
- 15. Parameter Settings for User Entity Instance: imem:my_imem|altsyncram:altsyncram_component
- 16. Parameter Settings for User Entity Instance: dmem:my_dmem|altsyncram:altsyncram_component
- 17. altsyncram Parameter Settings by Entity Instance
- 18. Port Connectivity Checks: "processor:my_processor|alu:alu1"
- 19. Post-Synthesis Netlist Statistics for Top Partition
- 20. Elapsed Time Per Partition
- 21. Analysis & Synthesis Messages
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated
+ 15. Source assignments for dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated
+ 16. Parameter Settings for User Entity Instance: imem:my_imem|altsyncram:altsyncram_component
+ 17. Parameter Settings for User Entity Instance: dmem:my_dmem|altsyncram:altsyncram_component
+ 18. altsyncram Parameter Settings by Entity Instance
+ 19. Port Connectivity Checks: "processor:my_processor|freqBy2:comb_281"
+ 20. Port Connectivity Checks: "freqBy2:s2"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
 
 
 
@@ -53,15 +55,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Nov 21 01:03:28 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sun Nov 21 17:17:13 2021       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; NewPC5                                      ;
 ; Top-level Entity Name              ; skeleton                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 3,166                                       ;
-;     Total combinational functions  ; 2,185                                       ;
-;     Dedicated logic registers      ; 1,029                                       ;
-; Total registers                    ; 1029                                        ;
+; Total logic elements               ; 3,195                                       ;
+;     Total combinational functions  ; 2,235                                       ;
+;     Dedicated logic registers      ; 1,007                                       ;
+; Total registers                    ; 1007                                        ;
 ; Total pins                         ; 55                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 262,144                                     ;
@@ -173,6 +175,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                          ; Library ;
 +----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+; clk_div3.v                       ; yes             ; User Verilog HDL File                  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/clk_div3.v                     ;         ;
 ; freqBy2.v                        ; yes             ; User Verilog HDL File                  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/freqBy2.v                      ;         ;
 ; clkDiv4.v                        ; yes             ; User Verilog HDL File                  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/clkDiv4.v                      ;         ;
 ; skeleton.v                       ; yes             ; User Verilog HDL File                  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v                     ;         ;
@@ -191,7 +194,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; altram.inc                       ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/altram.inc                                                        ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/altdpram.inc                                                      ;         ;
 ; db/altsyncram_ahb1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf         ;         ;
-; mif_outputs/basictestcases.mif   ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/mif_outputs/basictestcases.mif ;         ;
+; ./mif_outputs/basicTestCases.mif ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/mif_outputs/basicTestCases.mif ;         ;
 ; db/altsyncram_0jf1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf         ;         ;
 +----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
 
@@ -201,20 +204,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+----------------------+
 ; Resource                                    ; Usage                ;
 +---------------------------------------------+----------------------+
-; Estimated Total logic elements              ; 3,166                ;
+; Estimated Total logic elements              ; 3,195                ;
 ;                                             ;                      ;
-; Total combinational functions               ; 2185                 ;
+; Total combinational functions               ; 2235                 ;
 ; Logic element usage by number of LUT inputs ;                      ;
-;     -- 4 input functions                    ; 1787                 ;
-;     -- 3 input functions                    ; 346                  ;
-;     -- <=2 input functions                  ; 52                   ;
+;     -- 4 input functions                    ; 1835                 ;
+;     -- 3 input functions                    ; 349                  ;
+;     -- <=2 input functions                  ; 51                   ;
 ;                                             ;                      ;
 ; Logic elements by mode                      ;                      ;
-;     -- normal mode                          ; 2098                 ;
-;     -- arithmetic mode                      ; 87                   ;
+;     -- normal mode                          ; 2117                 ;
+;     -- arithmetic mode                      ; 118                  ;
 ;                                             ;                      ;
-; Total registers                             ; 1029                 ;
-;     -- Dedicated logic registers            ; 1029                 ;
+; Total registers                             ; 1007                 ;
+;     -- Dedicated logic registers            ; 1007                 ;
 ;     -- I/O registers                        ; 0                    ;
 ;                                             ;                      ;
 ; I/O pins                                    ; 55                   ;
@@ -223,8 +226,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0                    ;
 ;                                             ;                      ;
 ; Maximum fan-out node                        ; freqBy2:f1|clock_out ;
-; Maximum fan-out                             ; 1081                 ;
-; Total fan-out                               ; 13377                ;
+; Maximum fan-out                             ; 1060                 ;
+; Total fan-out                               ; 13490                ;
 ; Average fan-out                             ; 3.95                 ;
 +---------------------------------------------+----------------------+
 
@@ -234,8 +237,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                   ; Entity Name     ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+-----------------+--------------+
-; |skeleton                                 ; 2185 (0)          ; 1029 (0)     ; 262144      ; 0            ; 0       ; 0         ; 55   ; 0            ; |skeleton                                                                             ; skeleton        ; work         ;
-;    |clkDiv4:c1|                           ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|clkDiv4:c1                                                                  ; clkDiv4         ; work         ;
+; |skeleton                                 ; 2235 (0)          ; 1007 (0)     ; 262144      ; 0            ; 0       ; 0         ; 55   ; 0            ; |skeleton                                                                             ; skeleton        ; work         ;
+;    |clkDiv4:c1|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|clkDiv4:c1                                                                  ; clkDiv4         ; work         ;
 ;    |dmem:my_dmem|                         ; 0 (0)             ; 0 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|dmem:my_dmem                                                                ; dmem            ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|dmem:my_dmem|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;          |altsyncram_0jf1:auto_generated| ; 0 (0)             ; 0 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated ; altsyncram_0jf1 ; work         ;
@@ -243,9 +246,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |imem:my_imem|                         ; 0 (0)             ; 0 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|imem:my_imem                                                                ; imem            ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|imem:my_imem|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;          |altsyncram_ahb1:auto_generated| ; 0 (0)             ; 0 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated ; altsyncram_ahb1 ; work         ;
-;    |processor:my_processor|               ; 1458 (1055)       ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|processor:my_processor                                                      ; processor       ; work         ;
-;       |alu:alu1|                          ; 403 (403)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|processor:my_processor|alu:alu1                                             ; alu             ; work         ;
-;    |regfile:my_regfile|                   ; 723 (723)         ; 1013 (1013)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|regfile:my_regfile                                                          ; regfile         ; work         ;
+;    |processor:my_processor|               ; 1501 (1061)       ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|processor:my_processor                                                      ; processor       ; work         ;
+;       |alu:alu1|                          ; 440 (440)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|processor:my_processor|alu:alu1                                             ; alu             ; work         ;
+;    |regfile:my_regfile|                   ; 731 (731)         ; 992 (992)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|regfile:my_regfile                                                          ; regfile         ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -270,24 +273,64 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+------------------------+-----------------+
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; regfile:my_regfile|registers[0][7]     ; Stuck at GND due to stuck port data_in ;
-; regfile:my_regfile|registers[0][6]     ; Stuck at GND due to stuck port data_in ;
-; regfile:my_regfile|registers[0][5]     ; Stuck at GND due to stuck port data_in ;
-; regfile:my_regfile|registers[0][4]     ; Stuck at GND due to stuck port data_in ;
-; regfile:my_regfile|registers[0][3]     ; Stuck at GND due to stuck port data_in ;
-; regfile:my_regfile|registers[0][2]     ; Stuck at GND due to stuck port data_in ;
-; regfile:my_regfile|registers[0][0]     ; Stuck at GND due to stuck port data_in ;
-; regfile:my_regfile|registers[0][26]    ; Stuck at GND due to stuck port data_in ;
-; regfile:my_regfile|registers[0][25]    ; Stuck at GND due to stuck port data_in ;
-; regfile:my_regfile|registers[0][24]    ; Stuck at GND due to stuck port data_in ;
-; regfile:my_regfile|registers[0][12]    ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 11 ;                                        ;
-+----------------------------------------+----------------------------------------+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++----------------------------------------+---------------------------------------------+
+; Register name                          ; Reason for Removal                          ;
++----------------------------------------+---------------------------------------------+
+; regfile:my_regfile|registers[0][31]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][30]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][29]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][28]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][27]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][26]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][25]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][24]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][23]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][22]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][21]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][20]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][19]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][18]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][17]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][16]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][15]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][14]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][13]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][12]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][11]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][10]    ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][9]     ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][8]     ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][7]     ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][6]     ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][5]     ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][4]     ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][3]     ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][2]     ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][1]     ; Stuck at GND due to stuck port clock_enable ;
+; regfile:my_regfile|registers[0][0]     ; Stuck at GND due to stuck port clock_enable ;
+; clkDiv4:c1|r_reg[1]                    ; Stuck at GND due to stuck port data_in      ;
+; Total Number of Removed Registers = 33 ;                                             ;
++----------------------------------------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                      ;
++-------------------------------------+--------------------------------+---------------------------------------------------------------------------+
+; Register name                       ; Reason for Removal             ; Registers Removed due to This Register                                    ;
++-------------------------------------+--------------------------------+---------------------------------------------------------------------------+
+; regfile:my_regfile|registers[0][31] ; Stuck at GND                   ; regfile:my_regfile|registers[0][29], regfile:my_regfile|registers[0][28], ;
+;                                     ; due to stuck port clock_enable ; regfile:my_regfile|registers[0][26], regfile:my_regfile|registers[0][25], ;
+;                                     ;                                ; regfile:my_regfile|registers[0][24], regfile:my_regfile|registers[0][23], ;
+;                                     ;                                ; regfile:my_regfile|registers[0][22], regfile:my_regfile|registers[0][21], ;
+;                                     ;                                ; regfile:my_regfile|registers[0][20], regfile:my_regfile|registers[0][19], ;
+;                                     ;                                ; regfile:my_regfile|registers[0][18], regfile:my_regfile|registers[0][17], ;
+;                                     ;                                ; regfile:my_regfile|registers[0][16], regfile:my_regfile|registers[0][15], ;
+;                                     ;                                ; regfile:my_regfile|registers[0][3]                                        ;
+; regfile:my_regfile|registers[0][5]  ; Stuck at GND                   ; regfile:my_regfile|registers[0][2], regfile:my_regfile|registers[0][1],   ;
+;                                     ; due to stuck port clock_enable ; regfile:my_regfile|registers[0][0]                                        ;
++-------------------------------------+--------------------------------+---------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -295,12 +338,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1029  ;
+; Total registers                              ; 1007  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 1016  ;
+; Number of registers using Asynchronous Clear ; 994   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1013  ;
+; Number of registers using Clock Enable       ; 992   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -310,20 +353,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |skeleton|processor:my_processor|pc[5]               ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |skeleton|processor:my_processor|ctrl_readRegA[4]    ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |skeleton|processor:my_processor|ctrl_writeReg[1]    ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |skeleton|regfile:my_regfile|Mux18                   ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |skeleton|processor:my_processor|data_operandB[17]   ;
-; 7:1                ; 12 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |skeleton|processor:my_processor|data_writeReg[8]    ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |skeleton|processor:my_processor|pc[8]               ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |skeleton|processor:my_processor|ctrl_readRegA[3]    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |skeleton|processor:my_processor|ctrl_writeReg[3]    ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |skeleton|regfile:my_regfile|Mux21                   ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |skeleton|processor:my_processor|data_operandB[20]   ;
+; 7:1                ; 12 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |skeleton|processor:my_processor|data_writeReg[0]    ;
 ; 35:1               ; 4 bits    ; 92 LEs        ; 20 LEs               ; 72 LEs                 ; No         ; |skeleton|processor:my_processor|alu:alu1|Selector22 ;
 ; 36:1               ; 4 bits    ; 96 LEs        ; 24 LEs               ; 72 LEs                 ; No         ; |skeleton|processor:my_processor|alu:alu1|Selector24 ;
-; 37:1               ; 2 bits    ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; No         ; |skeleton|processor:my_processor|alu:alu1|Selector28 ;
+; 37:1               ; 2 bits    ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; No         ; |skeleton|processor:my_processor|alu:alu1|Selector29 ;
 ; 38:1               ; 2 bits    ; 50 LEs        ; 14 LEs               ; 36 LEs                 ; No         ; |skeleton|processor:my_processor|alu:alu1|Selector30 ;
-; 41:1               ; 3 bits    ; 81 LEs        ; 21 LEs               ; 60 LEs                 ; No         ; |skeleton|processor:my_processor|data_writeReg[15]   ;
-; 41:1               ; 8 bits    ; 216 LEs       ; 64 LEs               ; 152 LEs                ; No         ; |skeleton|processor:my_processor|data_writeReg[16]   ;
+; 41:1               ; 3 bits    ; 81 LEs        ; 21 LEs               ; 60 LEs                 ; No         ; |skeleton|processor:my_processor|data_writeReg[14]   ;
+; 41:1               ; 8 bits    ; 216 LEs       ; 64 LEs               ; 152 LEs                ; No         ; |skeleton|processor:my_processor|data_writeReg[22]   ;
 ; 42:1               ; 3 bits    ; 84 LEs        ; 27 LEs               ; 57 LEs                 ; No         ; |skeleton|processor:my_processor|data_writeReg[24]   ;
-; 43:1               ; 2 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; No         ; |skeleton|processor:my_processor|data_writeReg[28]   ;
+; 43:1               ; 2 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; No         ; |skeleton|processor:my_processor|data_writeReg[29]   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
 
 
@@ -498,13 +541,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "processor:my_processor|alu:alu1"                                                          ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                             ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; isLessThan ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "processor:my_processor|freqBy2:comb_281"                                                 ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; clock_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "freqBy2:s2"                                                                              ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; clock_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -513,24 +565,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 55                          ;
-; cycloneiii_ff         ; 1029                        ;
-;     CLR               ; 3                           ;
-;     ENA CLR           ; 1013                        ;
+; cycloneiii_ff         ; 1007                        ;
+;     CLR               ; 2                           ;
+;     ENA CLR           ; 992                         ;
 ;     plain             ; 13                          ;
-; cycloneiii_lcell_comb ; 2185                        ;
-;     arith             ; 87                          ;
-;         2 data inputs ; 23                          ;
-;         3 data inputs ; 64                          ;
-;     normal            ; 2098                        ;
+; cycloneiii_lcell_comb ; 2235                        ;
+;     arith             ; 118                         ;
+;         2 data inputs ; 12                          ;
+;         3 data inputs ; 106                         ;
+;     normal            ; 2117                        ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 26                          ;
-;         3 data inputs ; 282                         ;
-;         4 data inputs ; 1787                        ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 37                          ;
+;         3 data inputs ; 243                         ;
+;         4 data inputs ; 1835                        ;
 ; cycloneiii_ram_block  ; 64                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 20.10                       ;
-; Average LUT depth     ; 16.97                       ;
+; Average LUT depth     ; 16.98                       ;
 +-----------------------+-----------------------------+
 
 
@@ -539,7 +591,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:09     ;
+; Top            ; 00:00:12     ;
 +----------------+--------------+
 
 
@@ -549,9 +601,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Sun Nov 21 01:03:06 2021
+    Info: Processing started: Sun Nov 21 17:16:39 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off NewPC5 -c NewPC5
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file clk_div3.v
+    Info (12023): Found entity 1: clk_div3 File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/clk_div3.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file reg32.v
     Info (12023): Found entity 1: reg32 File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/reg32.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file freqby2.v
@@ -570,10 +624,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file dmem.v
     Info (12023): Found entity 1: dmem File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/dmem.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file alu.v
     Info (12023): Found entity 1: alu File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/alu.v Line: 1
+Critical Warning (10846): Verilog HDL Instantiation warning at processor.v(142): instance has no name File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 142
 Info (12127): Elaborating entity "skeleton" for the top level hierarchy
 Info (12128): Elaborating entity "freqBy2" for hierarchy "freqBy2:f1" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 27
-Info (12128): Elaborating entity "clkDiv4" for hierarchy "clkDiv4:c1" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 28
-Info (12128): Elaborating entity "imem" for hierarchy "imem:my_imem" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 48
+Info (12128): Elaborating entity "clk_div3" for hierarchy "clk_div3:s1" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 28
+Info (12128): Elaborating entity "clkDiv4" for hierarchy "clkDiv4:c1" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 29
+Info (12128): Elaborating entity "imem" for hierarchy "imem:my_imem" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 50
 Info (12128): Elaborating entity "altsyncram" for hierarchy "imem:my_imem|altsyncram:altsyncram_component" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/imem.v Line: 82
 Info (12130): Elaborated megafunction instantiation "imem:my_imem|altsyncram:altsyncram_component" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/imem.v Line: 82
 Info (12133): Instantiated megafunction "imem:my_imem|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/imem.v Line: 82
@@ -594,7 +650,7 @@ Info (12133): Instantiated megafunction "imem:my_imem|altsyncram:altsyncram_comp
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ahb1.tdf
     Info (12023): Found entity 1: altsyncram_ahb1 File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_ahb1" for hierarchy "imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated" File: c:/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "dmem" for hierarchy "dmem:my_dmem" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 63
+Info (12128): Elaborating entity "dmem" for hierarchy "dmem:my_dmem" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 65
 Info (12128): Elaborating entity "altsyncram" for hierarchy "dmem:my_dmem|altsyncram:altsyncram_component" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/dmem.v Line: 86
 Info (12130): Elaborated megafunction instantiation "dmem:my_dmem|altsyncram:altsyncram_component" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/dmem.v Line: 86
 Info (12133): Instantiated megafunction "dmem:my_dmem|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/dmem.v Line: 86
@@ -615,9 +671,9 @@ Info (12133): Instantiated megafunction "dmem:my_dmem|altsyncram:altsyncram_comp
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0jf1.tdf
     Info (12023): Found entity 1: altsyncram_0jf1 File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_0jf1" for hierarchy "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated" File: c:/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "regfile" for hierarchy "regfile:my_regfile" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 81
-Info (12128): Elaborating entity "processor" for hierarchy "processor:my_processor" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 109
-Info (12128): Elaborating entity "alu" for hierarchy "processor:my_processor|alu:alu1" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 173
+Info (12128): Elaborating entity "regfile" for hierarchy "regfile:my_regfile" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 83
+Info (12128): Elaborating entity "processor" for hierarchy "processor:my_processor" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 111
+Info (12128): Elaborating entity "alu" for hierarchy "processor:my_processor|alu:alu1" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 176
 Warning (10270): Verilog HDL Case Statement warning at alu.v(25): incomplete case statement has no default case item File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/alu.v Line: 25
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13049): Converted tri-state buffer "processor:my_processor|ctrl_readRegB[4]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 89
@@ -692,15 +748,15 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3317 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3346 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 53 output pins
-    Info (21061): Implemented 3198 logic cells
+    Info (21061): Implemented 3227 logic cells
     Info (21064): Implemented 64 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 72 warnings
-    Info: Peak virtual memory: 4977 megabytes
-    Info: Processing ended: Sun Nov 21 01:03:28 2021
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:39
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 73 warnings
+    Info: Peak virtual memory: 4978 megabytes
+    Info: Processing ended: Sun Nov 21 17:17:13 2021
+    Info: Elapsed time: 00:00:34
+    Info: Total CPU time (on all processors): 00:01:00
 
 
