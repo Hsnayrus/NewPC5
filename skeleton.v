@@ -27,10 +27,10 @@ module skeleton(clock, reset, imem_clock, dmem_clock, processor_clock, regfile_c
 	 freqBy2 f1(clock, reset, clk2);
 	 clkDiv4 c1(clock, reset, clk4);
 	 
-	 assign processor_clock = clk2;
-	 assign regfile_clock   = processor_clock;
+	 assign processor_clock = clk4;
+	 assign regfile_clock   = clk2;
 	 assign dmem_clock      = clk2;
-	 assign imem_clock      = clock;
+	 assign imem_clock      = clk2;
 	 
 	 assign pc = address_imem;
 	 

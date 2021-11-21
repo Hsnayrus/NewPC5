@@ -73,7 +73,7 @@ module processor(
 );
     // Control signals
     input clock, reset;
-
+	 
     // Imem
     output [11:0] address_imem;
     input [31:0] q_imem;
@@ -92,7 +92,7 @@ module processor(
 
     /* YOUR CODE STARTS HERE */
 	 
-	 wire clk2, clk4;
+	 wire clk4;
 	 wire is_rType, is_addi, is_sub, is_add, is_or, is_sll, is_sra, is_sw, is_lw, is_j, is_bne, is_jal, is_jr, is_blt, is_bex, is_setx, is_jiType, rstatus, jump_bne, addOverflow, subOverflow, addiOverflow;
 	 wire isNotEqual, isLessThan, overflow;
 	 wire [4:0] Opcode, rd, rs, rt, shamt, ALU_op;
@@ -141,7 +141,7 @@ module processor(
 	 reg[31:0] pc;
 	 
 	 always @(posedge clock) begin
-		pc <= jump;
+		#1 pc <= jump;
 	 end
 	 
 	 assign ctrl_writeEnable = ~clock && (is_rType || is_addi || is_jal || is_setx || is_lw);
@@ -149,6 +149,7 @@ module processor(
 	 assign address_imem  = pc[11:0];
 	 
 	 assign jump          = is_jiType ? targetExtended : (is_jr ? data_readRegA : (jump_bne ? (signExtended + 1'b1) : (addressExtended + 1'b1)));
+//    assign jump = is_j ? targetExtended : addressExtended + 1'b1;
 	 
 	 assign ctrl_readRegA = (is_bne || is_jr || is_sw)  ? rd : ((is_rType || is_addi || is_lw) ? rs : 5'h1E); // in case of bex its 1E
 	 
