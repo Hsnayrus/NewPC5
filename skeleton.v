@@ -9,7 +9,7 @@
  * inspect which signals the processor tries to assert when.
  */
 
-module skeleton(clock, reset, imem_clock, dmem_clock, processor_clock, regfile_clock, pc);
+module skeleton(clock, reset, imem_clock, dmem_clock, processor_clock, regfile_clock, pc, dataWriteReg, ctrlWriteReg);
     input clock, reset;
     /* 
         Create four clocks for each module from the original input "clock".
@@ -19,17 +19,16 @@ module skeleton(clock, reset, imem_clock, dmem_clock, processor_clock, regfile_c
         based on proper functioning with this clock.
     */
     output imem_clock, dmem_clock, processor_clock, regfile_clock;
-	
-	 
-	 wire clk2, clk4, anotherClk4;
+	 output[4: 0] ctrlWriteReg;
+	 output[31:0] dataWriteReg;
+	 wire clk2, clk4;
 	 output[11:0] pc;
 	 
-	 freqBy2(clock, reset, clk2);
-	 clkDiv4(clock, reset, clk4);
-	 clkDiv4(clock, reset, anotherClk4);
+	 freqBy2 f1(clock, reset, clk2);
+	 clkDiv4 c1(clock, reset, clk4);
 	 
-	 assign processor_clock = clk4;
-	 assign regfile_clock   = anotherClk4;
+	 assign processor_clock = clk2;
+	 assign regfile_clock   = processor_clock;
 	 assign dmem_clock      = clk2;
 	 assign imem_clock      = clock;
 	 
@@ -44,8 +43,8 @@ module skeleton(clock, reset, imem_clock, dmem_clock, processor_clock, regfile_c
     wire [31:0] q_imem;
     imem my_imem(
         .address    (address_imem),            // address of data
-        .clock      (imem_clock),                  // you may need to invert the clock
-        .q          (q_imem)                   // the raw instruction
+        .clock      (imem_clock),             // you may need to invert the clock
+        .q          (q_imem)                 // the raw instruction
     );
 
     /** DMEM **/
@@ -56,11 +55,11 @@ module skeleton(clock, reset, imem_clock, dmem_clock, processor_clock, regfile_c
     wire wren;
     wire [31:0] q_dmem;
     dmem my_dmem(
-        .address    (/* 12-bit wire */),       // address of data
-        .clock      (dmem_clock),                  // may need to invert the clock
-        .data	    (/* 32-bit data in */),    // data you want to write
-        .wren	    (/* 1-bit signal */),      // write enable
-        .q          (/* 32-bit data out */)    // data from dmem
+        .address    (address_dmem),       // address of data
+        .clock      (dmem_clock),        // may need to invert the clock
+        .data	    (data),              // data you want to write
+        .wren	    (wren),             // write enable
+        .q          (q_dmem)          // data from dmem
     );
 
     /** REGFILE **/
@@ -80,6 +79,8 @@ module skeleton(clock, reset, imem_clock, dmem_clock, processor_clock, regfile_c
         data_readRegA,
         data_readRegB
     );
+	 assign dataWriteReg = data_writeReg;
+	 assign ctrlWriteReg = ctrl_writeReg;
 
     /** PROCESSOR **/
     processor my_processor(

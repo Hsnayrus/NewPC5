@@ -1,5 +1,5 @@
 Analysis & Synthesis report for NewPC5
-Sat Nov 20 17:08:30 2021
+Sun Nov 21 00:03:28 2021
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -14,21 +14,20 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Source assignments for imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated
- 13. Source assignments for dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated
- 14. Parameter Settings for User Entity Instance: imem:my_imem|altsyncram:altsyncram_component
- 15. Parameter Settings for User Entity Instance: dmem:my_dmem|altsyncram:altsyncram_component
- 16. altsyncram Parameter Settings by Entity Instance
- 17. Port Connectivity Checks: "processor:my_processor|alu:alu1"
- 18. Port Connectivity Checks: "processor:my_processor"
- 19. Port Connectivity Checks: "dmem:my_dmem"
+  9. Analysis & Synthesis IP Cores Summary
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for imem:my_imem|altsyncram:altsyncram_component|altsyncram_q3b1:auto_generated
+ 14. Source assignments for dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated
+ 15. Parameter Settings for User Entity Instance: imem:my_imem|altsyncram:altsyncram_component
+ 16. Parameter Settings for User Entity Instance: dmem:my_dmem|altsyncram:altsyncram_component
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Port Connectivity Checks: "processor:my_processor|alu:alu1"
+ 19. Port Connectivity Checks: "clkDiv4:c1"
  20. Post-Synthesis Netlist Statistics for Top Partition
  21. Elapsed Time Per Partition
  22. Analysis & Synthesis Messages
- 23. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -55,18 +54,18 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Nov 20 17:08:30 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sun Nov 21 00:03:28 2021       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; NewPC5                                      ;
 ; Top-level Entity Name              ; skeleton                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 31                                          ;
-;     Total combinational functions  ; 31                                          ;
-;     Dedicated logic registers      ; 16                                          ;
-; Total registers                    ; 16                                          ;
-; Total pins                         ; 18                                          ;
+; Total logic elements               ; 3,149                                       ;
+;     Total combinational functions  ; 2,168                                       ;
+;     Dedicated logic registers      ; 1,026                                       ;
+; Total registers                    ; 1026                                        ;
+; Total pins                         ; 55                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 69,632                                      ;
+; Total memory bits                  ; 262,144                                     ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
@@ -170,65 +169,65 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                        ;
-+----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                          ; Library ;
-+----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
-; freqBy2.v                        ; yes             ; User Verilog HDL File                  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/freqBy2.v                      ;         ;
-; clkDiv4.v                        ; yes             ; User Verilog HDL File                  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/clkDiv4.v                      ;         ;
-; skeleton.v                       ; yes             ; User Verilog HDL File                  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v                     ;         ;
-; regfile.v                        ; yes             ; User Verilog HDL File                  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v                      ;         ;
-; processor.v                      ; yes             ; User Verilog HDL File                  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v                    ;         ;
-; imem.v                           ; yes             ; User Wizard-Generated File             ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/imem.v                         ;         ;
-; dmem.v                           ; yes             ; User Wizard-Generated File             ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/dmem.v                         ;         ;
-; alu.v                            ; yes             ; User Verilog HDL File                  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/alu.v                          ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf                                                    ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/stratix_ram_block.inc                                             ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/lpm_mux.inc                                                       ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/lpm_decode.inc                                                    ;         ;
-; aglobal160.inc                   ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/aglobal160.inc                                                    ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/a_rdenreg.inc                                                     ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/altrom.inc                                                        ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/altram.inc                                                        ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/altdpram.inc                                                      ;         ;
-; db/altsyncram_ahb1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf         ;         ;
-; mif_outputs/basictestcases.mif   ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/mif_outputs/basictestcases.mif ;         ;
-; db/altsyncram_0jf1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf         ;         ;
-+----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                    ;
++----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                      ; Library ;
++----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
+; freqBy2.v                        ; yes             ; User Verilog HDL File                  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/freqBy2.v                  ;         ;
+; clkDiv4.v                        ; yes             ; User Verilog HDL File                  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/clkDiv4.v                  ;         ;
+; skeleton.v                       ; yes             ; User Verilog HDL File                  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v                 ;         ;
+; regfile.v                        ; yes             ; User Verilog HDL File                  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v                  ;         ;
+; processor.v                      ; yes             ; User Verilog HDL File                  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v                ;         ;
+; imem.v                           ; yes             ; User Wizard-Generated File             ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/imem.v                     ;         ;
+; dmem.v                           ; yes             ; User Wizard-Generated File             ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/dmem.v                     ;         ;
+; alu.v                            ; yes             ; User Verilog HDL File                  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/alu.v                      ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf                                                ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/stratix_ram_block.inc                                         ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/lpm_mux.inc                                                   ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/lpm_decode.inc                                                ;         ;
+; aglobal160.inc                   ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/aglobal160.inc                                                ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/a_rdenreg.inc                                                 ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/altrom.inc                                                    ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/altram.inc                                                    ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/altera_lite/16.0/quartus/libraries/megafunctions/altdpram.inc                                                  ;         ;
+; db/altsyncram_q3b1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_q3b1.tdf     ;         ;
+; mif_outputs/basic_test.mif       ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/mif_outputs/basic_test.mif ;         ;
+; db/altsyncram_0jf1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf     ;         ;
++----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 31          ;
-;                                             ;             ;
-; Total combinational functions               ; 31          ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 14          ;
-;     -- 3 input functions                    ; 0           ;
-;     -- <=2 input functions                  ; 17          ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 20          ;
-;     -- arithmetic mode                      ; 11          ;
-;                                             ;             ;
-; Total registers                             ; 16          ;
-;     -- Dedicated logic registers            ; 16          ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 18          ;
-; Total memory bits                           ; 69632       ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 22          ;
-; Total fan-out                               ; 378         ;
-; Average fan-out                             ; 3.78        ;
-+---------------------------------------------+-------------+
++--------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                        ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+; Estimated Total logic elements              ; 3,149                ;
+;                                             ;                      ;
+; Total combinational functions               ; 2168                 ;
+; Logic element usage by number of LUT inputs ;                      ;
+;     -- 4 input functions                    ; 1776                 ;
+;     -- 3 input functions                    ; 342                  ;
+;     -- <=2 input functions                  ; 50                   ;
+;                                             ;                      ;
+; Logic elements by mode                      ;                      ;
+;     -- normal mode                          ; 2081                 ;
+;     -- arithmetic mode                      ; 87                   ;
+;                                             ;                      ;
+; Total registers                             ; 1026                 ;
+;     -- Dedicated logic registers            ; 1026                 ;
+;     -- I/O registers                        ; 0                    ;
+;                                             ;                      ;
+; I/O pins                                    ; 55                   ;
+; Total memory bits                           ; 262144               ;
+;                                             ;                      ;
+; Embedded Multiplier 9-bit elements          ; 0                    ;
+;                                             ;                      ;
+; Maximum fan-out node                        ; freqBy2:f1|clock_out ;
+; Maximum fan-out                             ; 1062                 ;
+; Total fan-out                               ; 13309                ;
+; Average fan-out                             ; 3.95                 ;
++---------------------------------------------+----------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -236,1061 +235,59 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                   ; Entity Name     ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+-----------------+--------------+
-; |skeleton                                 ; 31 (0)            ; 16 (0)       ; 69632       ; 0            ; 0       ; 0         ; 18   ; 0            ; |skeleton                                                                             ; skeleton        ; work         ;
-;    |clkDiv4:comb_4|                       ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|clkDiv4:comb_4                                                              ; clkDiv4         ; work         ;
-;    |clkDiv4:comb_5|                       ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|clkDiv4:comb_5                                                              ; clkDiv4         ; work         ;
-;    |freqBy2:comb_3|                       ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|freqBy2:comb_3                                                              ; freqBy2         ; work         ;
-;    |imem:my_imem|                         ; 0 (0)             ; 0 (0)        ; 69632       ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|imem:my_imem                                                                ; imem            ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 69632       ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|imem:my_imem|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
-;          |altsyncram_ahb1:auto_generated| ; 0 (0)             ; 0 (0)        ; 69632       ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated ; altsyncram_ahb1 ; work         ;
-;    |processor:my_processor|               ; 27 (27)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|processor:my_processor                                                      ; processor       ; work         ;
+; |skeleton                                 ; 2168 (0)          ; 1026 (0)     ; 262144      ; 0            ; 0       ; 0         ; 55   ; 0            ; |skeleton                                                                             ; skeleton        ; work         ;
+;    |dmem:my_dmem|                         ; 0 (0)             ; 0 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|dmem:my_dmem                                                                ; dmem            ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|dmem:my_dmem|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
+;          |altsyncram_0jf1:auto_generated| ; 0 (0)             ; 0 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated ; altsyncram_0jf1 ; work         ;
+;    |freqBy2:f1|                           ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|freqBy2:f1                                                                  ; freqBy2         ; work         ;
+;    |imem:my_imem|                         ; 0 (0)             ; 0 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|imem:my_imem                                                                ; imem            ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|imem:my_imem|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
+;          |altsyncram_q3b1:auto_generated| ; 0 (0)             ; 0 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|imem:my_imem|altsyncram:altsyncram_component|altsyncram_q3b1:auto_generated ; altsyncram_q3b1 ; work         ;
+;    |processor:my_processor|               ; 1451 (1045)       ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|processor:my_processor                                                      ; processor       ; work         ;
+;       |alu:alu1|                          ; 406 (406)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|processor:my_processor|alu:alu1                                             ; alu             ; work         ;
+;    |regfile:my_regfile|                   ; 716 (716)         ; 1013 (1013)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|regfile:my_regfile                                                          ; regfile         ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                             ;
-+----------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+----------------------------------+
-; Name                                                                                   ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                              ;
-+----------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+----------------------------------+
-; imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 4096         ; 32           ; --           ; --           ; 131072 ; ./mif_outputs/basicTestCases.mif ;
-+----------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+----------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                ;
++----------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+------------------------------+
+; Name                                                                                   ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                          ;
++----------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+------------------------------+
+; dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 4096         ; 32           ; --           ; --           ; 131072 ; None                         ;
+; imem:my_imem|altsyncram:altsyncram_component|altsyncram_q3b1:auto_generated|ALTSYNCRAM ; AUTO ; ROM         ; 4096         ; 32           ; --           ; --           ; 131072 ; ./mif_outputs/basic_test.mif ;
++----------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                     ;
-+------------------------------------------+---------------------------------------------+
-; Register name                            ; Reason for Removal                          ;
-+------------------------------------------+---------------------------------------------+
-; regfile:my_regfile|registers[31][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[31][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[30][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[29][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[28][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[27][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[26][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[25][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[24][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[23][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[22][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[21][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[20][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[19][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[18][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[17][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[16][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[15][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[14][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[13][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[12][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[11][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][31]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][30]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][29]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][28]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][27]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][26]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][25]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][24]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][23]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][22]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][21]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][20]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][19]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][18]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][17]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][16]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][15]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][14]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][13]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][12]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][11]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][10]     ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][9]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][8]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][7]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][6]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][5]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][4]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][3]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][2]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][1]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[10][0]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][31]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][30]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][29]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][28]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][27]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][26]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][25]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][24]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][23]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][22]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][21]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][20]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][19]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][18]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][17]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][16]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][15]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][14]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][13]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][12]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][11]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][10]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][9]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][8]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][7]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][6]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][5]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][4]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][3]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][2]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][1]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[9][0]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][31]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][30]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][29]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][28]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][27]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][26]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][25]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][24]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][23]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][22]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][21]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][20]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][19]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][18]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][17]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][16]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][15]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][14]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][13]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][12]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][11]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][10]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][9]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][8]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][7]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][6]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][5]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][4]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][3]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][2]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][1]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[8][0]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][31]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][30]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][29]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][28]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][27]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][26]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][25]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][24]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][23]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][22]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][21]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][20]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][19]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][18]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][17]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][16]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][15]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][14]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][13]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][12]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][11]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][10]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][9]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][8]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][7]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][6]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][5]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][4]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][3]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][2]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][1]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[7][0]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][31]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][30]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][29]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][28]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][27]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][26]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][25]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][24]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][23]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][22]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][21]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][20]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][19]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][18]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][17]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][16]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][15]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][14]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][13]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][12]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][11]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][10]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][9]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][8]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][7]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][6]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][5]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][4]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][3]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][2]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][1]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[6][0]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][31]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][30]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][29]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][28]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][27]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][26]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][25]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][24]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][23]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][22]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][21]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][20]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][19]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][18]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][17]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][16]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][15]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][14]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][13]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][12]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][11]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][10]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][9]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][8]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][7]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][6]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][5]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][4]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][3]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][2]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][1]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[5][0]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][31]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][30]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][29]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][28]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][27]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][26]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][25]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][24]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][23]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][22]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][21]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][20]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][19]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][18]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][17]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][16]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][15]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][14]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][13]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][12]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][11]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][10]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][9]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][8]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][7]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][6]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][5]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][4]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][3]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][2]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][1]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[4][0]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][31]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][30]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][29]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][28]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][27]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][26]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][25]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][24]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][23]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][22]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][21]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][20]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][19]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][18]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][17]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][16]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][15]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][14]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][13]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][12]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][11]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][10]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][9]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][8]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][7]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][6]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][5]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][4]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][3]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][2]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][1]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[3][0]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][31]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][30]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][29]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][28]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][27]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][26]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][25]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][24]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][23]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][22]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][21]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][20]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][19]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][18]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][17]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][16]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][15]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][14]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][13]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][12]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][11]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][10]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][9]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][8]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][7]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][6]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][5]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][4]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][3]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][2]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][1]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[2][0]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][31]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][30]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][29]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][28]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][27]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][26]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][25]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][24]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][23]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][22]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][21]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][20]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][19]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][18]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][17]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][16]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][15]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][14]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][13]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][12]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][11]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][10]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][9]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][8]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][7]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][6]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][5]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][4]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][3]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][2]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][1]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[1][0]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][31]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][30]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][29]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][28]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][27]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][26]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][25]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][24]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][23]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][22]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][21]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][20]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][19]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][18]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][17]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][16]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][15]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][14]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][13]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][12]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][11]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][10]      ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][9]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][8]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][7]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][6]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][5]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][4]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][3]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][2]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][1]       ; Stuck at GND due to stuck port clock_enable ;
-; regfile:my_regfile|registers[0][0]       ; Stuck at GND due to stuck port clock_enable ;
-; clkDiv4:comb_5|r_reg[1]                  ; Merged with clkDiv4:comb_4|r_reg[1]         ;
-; clkDiv4:comb_5|r_reg[0]                  ; Merged with clkDiv4:comb_4|r_reg[0]         ;
-; clkDiv4:comb_4|r_reg[1]                  ; Stuck at GND due to stuck port data_in      ;
-; Total Number of Removed Registers = 1027 ;                                             ;
-+------------------------------------------+---------------------------------------------+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                    ;
++--------+--------------+---------+--------------+--------------+------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance        ; IP Include File ;
++--------+--------------+---------+--------------+--------------+------------------------+-----------------+
+; Altera ; RAM: 1-PORT  ; 16.0    ; N/A          ; N/A          ; |skeleton|dmem:my_dmem ; dmem.v          ;
+; Altera ; ROM: 1-PORT  ; 16.0    ; N/A          ; N/A          ; |skeleton|imem:my_imem ; imem.v          ;
++--------+--------------+---------+--------------+--------------+------------------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; regfile:my_regfile|registers[0][7]     ; Stuck at GND due to stuck port data_in ;
+; regfile:my_regfile|registers[0][6]     ; Stuck at GND due to stuck port data_in ;
+; regfile:my_regfile|registers[0][5]     ; Stuck at GND due to stuck port data_in ;
+; regfile:my_regfile|registers[0][4]     ; Stuck at GND due to stuck port data_in ;
+; regfile:my_regfile|registers[0][3]     ; Stuck at GND due to stuck port data_in ;
+; regfile:my_regfile|registers[0][2]     ; Stuck at GND due to stuck port data_in ;
+; regfile:my_regfile|registers[0][0]     ; Stuck at GND due to stuck port data_in ;
+; regfile:my_regfile|registers[0][26]    ; Stuck at GND due to stuck port data_in ;
+; regfile:my_regfile|registers[0][25]    ; Stuck at GND due to stuck port data_in ;
+; regfile:my_regfile|registers[0][24]    ; Stuck at GND due to stuck port data_in ;
+; regfile:my_regfile|registers[0][12]    ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 11 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -1298,27 +295,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 16    ;
+; Total registers                              ; 1026  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Asynchronous Clear ; 1013  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 2     ;
+; Number of registers using Clock Enable       ; 1013  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
-; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |skeleton|processor:my_processor|pc[0] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |skeleton|processor:my_processor|pc[8]               ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |skeleton|processor:my_processor|ctrl_readRegA[4]    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |skeleton|processor:my_processor|ctrl_writeReg[1]    ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |skeleton|regfile:my_regfile|Mux17                   ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |skeleton|processor:my_processor|data_operandB[17]   ;
+; 7:1                ; 12 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |skeleton|processor:my_processor|data_writeReg[8]    ;
+; 35:1               ; 4 bits    ; 92 LEs        ; 20 LEs               ; 72 LEs                 ; No         ; |skeleton|processor:my_processor|alu:alu1|Selector22 ;
+; 36:1               ; 4 bits    ; 96 LEs        ; 24 LEs               ; 72 LEs                 ; No         ; |skeleton|processor:my_processor|alu:alu1|Selector27 ;
+; 37:1               ; 2 bits    ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; No         ; |skeleton|processor:my_processor|alu:alu1|Selector29 ;
+; 38:1               ; 2 bits    ; 50 LEs        ; 14 LEs               ; 36 LEs                 ; No         ; |skeleton|processor:my_processor|alu:alu1|Selector30 ;
+; 41:1               ; 3 bits    ; 81 LEs        ; 21 LEs               ; 60 LEs                 ; No         ; |skeleton|processor:my_processor|data_writeReg[15]   ;
+; 41:1               ; 8 bits    ; 216 LEs       ; 64 LEs               ; 152 LEs                ; No         ; |skeleton|processor:my_processor|data_writeReg[19]   ;
+; 42:1               ; 3 bits    ; 84 LEs        ; 27 LEs               ; 57 LEs                 ; No         ; |skeleton|processor:my_processor|data_writeReg[24]   ;
+; 43:1               ; 2 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; No         ; |skeleton|processor:my_processor|data_writeReg[29]   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------+
-; Source assignments for imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated ;
+; Source assignments for imem:my_imem|altsyncram:altsyncram_component|altsyncram_q3b1:auto_generated ;
 +---------------------------------+--------------------+------+--------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                   ;
 +---------------------------------+--------------------+------+--------------------------------------+
@@ -1337,62 +347,62 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 +-------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: imem:my_imem|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------------------+-------------------+
-; Parameter Name                     ; Value                            ; Type              ;
-+------------------------------------+----------------------------------+-------------------+
-; BYTE_SIZE_BLOCK                    ; 8                                ; Untyped           ;
-; AUTO_CARRY_CHAINS                  ; ON                               ; AUTO_CARRY        ;
-; IGNORE_CARRY_BUFFERS               ; OFF                              ; IGNORE_CARRY      ;
-; AUTO_CASCADE_CHAINS                ; ON                               ; AUTO_CASCADE      ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                              ; IGNORE_CASCADE    ;
-; WIDTH_BYTEENA                      ; 1                                ; Untyped           ;
-; OPERATION_MODE                     ; ROM                              ; Untyped           ;
-; WIDTH_A                            ; 32                               ; Signed Integer    ;
-; WIDTHAD_A                          ; 12                               ; Signed Integer    ;
-; NUMWORDS_A                         ; 4096                             ; Signed Integer    ;
-; OUTDATA_REG_A                      ; CLOCK0                           ; Untyped           ;
-; ADDRESS_ACLR_A                     ; NONE                             ; Untyped           ;
-; OUTDATA_ACLR_A                     ; NONE                             ; Untyped           ;
-; WRCONTROL_ACLR_A                   ; NONE                             ; Untyped           ;
-; INDATA_ACLR_A                      ; NONE                             ; Untyped           ;
-; BYTEENA_ACLR_A                     ; NONE                             ; Untyped           ;
-; WIDTH_B                            ; 1                                ; Untyped           ;
-; WIDTHAD_B                          ; 1                                ; Untyped           ;
-; NUMWORDS_B                         ; 1                                ; Untyped           ;
-; INDATA_REG_B                       ; CLOCK1                           ; Untyped           ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                           ; Untyped           ;
-; RDCONTROL_REG_B                    ; CLOCK1                           ; Untyped           ;
-; ADDRESS_REG_B                      ; CLOCK1                           ; Untyped           ;
-; OUTDATA_REG_B                      ; UNREGISTERED                     ; Untyped           ;
-; BYTEENA_REG_B                      ; CLOCK1                           ; Untyped           ;
-; INDATA_ACLR_B                      ; NONE                             ; Untyped           ;
-; WRCONTROL_ACLR_B                   ; NONE                             ; Untyped           ;
-; ADDRESS_ACLR_B                     ; NONE                             ; Untyped           ;
-; OUTDATA_ACLR_B                     ; NONE                             ; Untyped           ;
-; RDCONTROL_ACLR_B                   ; NONE                             ; Untyped           ;
-; BYTEENA_ACLR_B                     ; NONE                             ; Untyped           ;
-; WIDTH_BYTEENA_A                    ; 1                                ; Signed Integer    ;
-; WIDTH_BYTEENA_B                    ; 1                                ; Untyped           ;
-; RAM_BLOCK_TYPE                     ; AUTO                             ; Untyped           ;
-; BYTE_SIZE                          ; 8                                ; Untyped           ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                        ; Untyped           ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ             ; Untyped           ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ             ; Untyped           ;
-; INIT_FILE                          ; ./mif_outputs/basicTestCases.mif ; Untyped           ;
-; INIT_FILE_LAYOUT                   ; PORT_A                           ; Untyped           ;
-; MAXIMUM_DEPTH                      ; 0                                ; Untyped           ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS                           ; Untyped           ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                           ; Untyped           ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                           ; Untyped           ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                           ; Untyped           ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                  ; Untyped           ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                  ; Untyped           ;
-; ENABLE_ECC                         ; FALSE                            ; Untyped           ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                            ; Untyped           ;
-; WIDTH_ECCSTATUS                    ; 3                                ; Untyped           ;
-; DEVICE_FAMILY                      ; Cyclone IV E                     ; Untyped           ;
-; CBXI_PARAMETER                     ; altsyncram_ahb1                  ; Untyped           ;
-+------------------------------------+----------------------------------+-------------------+
++------------------------------------+------------------------------+-----------------------+
+; Parameter Name                     ; Value                        ; Type                  ;
++------------------------------------+------------------------------+-----------------------+
+; BYTE_SIZE_BLOCK                    ; 8                            ; Untyped               ;
+; AUTO_CARRY_CHAINS                  ; ON                           ; AUTO_CARRY            ;
+; IGNORE_CARRY_BUFFERS               ; OFF                          ; IGNORE_CARRY          ;
+; AUTO_CASCADE_CHAINS                ; ON                           ; AUTO_CASCADE          ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                          ; IGNORE_CASCADE        ;
+; WIDTH_BYTEENA                      ; 1                            ; Untyped               ;
+; OPERATION_MODE                     ; ROM                          ; Untyped               ;
+; WIDTH_A                            ; 32                           ; Signed Integer        ;
+; WIDTHAD_A                          ; 12                           ; Signed Integer        ;
+; NUMWORDS_A                         ; 4096                         ; Signed Integer        ;
+; OUTDATA_REG_A                      ; CLOCK0                       ; Untyped               ;
+; ADDRESS_ACLR_A                     ; NONE                         ; Untyped               ;
+; OUTDATA_ACLR_A                     ; NONE                         ; Untyped               ;
+; WRCONTROL_ACLR_A                   ; NONE                         ; Untyped               ;
+; INDATA_ACLR_A                      ; NONE                         ; Untyped               ;
+; BYTEENA_ACLR_A                     ; NONE                         ; Untyped               ;
+; WIDTH_B                            ; 1                            ; Untyped               ;
+; WIDTHAD_B                          ; 1                            ; Untyped               ;
+; NUMWORDS_B                         ; 1                            ; Untyped               ;
+; INDATA_REG_B                       ; CLOCK1                       ; Untyped               ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                       ; Untyped               ;
+; RDCONTROL_REG_B                    ; CLOCK1                       ; Untyped               ;
+; ADDRESS_REG_B                      ; CLOCK1                       ; Untyped               ;
+; OUTDATA_REG_B                      ; UNREGISTERED                 ; Untyped               ;
+; BYTEENA_REG_B                      ; CLOCK1                       ; Untyped               ;
+; INDATA_ACLR_B                      ; NONE                         ; Untyped               ;
+; WRCONTROL_ACLR_B                   ; NONE                         ; Untyped               ;
+; ADDRESS_ACLR_B                     ; NONE                         ; Untyped               ;
+; OUTDATA_ACLR_B                     ; NONE                         ; Untyped               ;
+; RDCONTROL_ACLR_B                   ; NONE                         ; Untyped               ;
+; BYTEENA_ACLR_B                     ; NONE                         ; Untyped               ;
+; WIDTH_BYTEENA_A                    ; 1                            ; Signed Integer        ;
+; WIDTH_BYTEENA_B                    ; 1                            ; Untyped               ;
+; RAM_BLOCK_TYPE                     ; AUTO                         ; Untyped               ;
+; BYTE_SIZE                          ; 8                            ; Untyped               ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                    ; Untyped               ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ         ; Untyped               ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ         ; Untyped               ;
+; INIT_FILE                          ; ./mif_outputs/basic_test.mif ; Untyped               ;
+; INIT_FILE_LAYOUT                   ; PORT_A                       ; Untyped               ;
+; MAXIMUM_DEPTH                      ; 0                            ; Untyped               ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                       ; Untyped               ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                       ; Untyped               ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                       ; Untyped               ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                       ; Untyped               ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN              ; Untyped               ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN              ; Untyped               ;
+; ENABLE_ECC                         ; FALSE                        ; Untyped               ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                        ; Untyped               ;
+; WIDTH_ECCSTATUS                    ; 3                            ; Untyped               ;
+; DEVICE_FAMILY                      ; Cyclone IV E                 ; Untyped               ;
+; CBXI_PARAMETER                     ; altsyncram_q3b1              ; Untyped               ;
++------------------------------------+------------------------------+-----------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1488,40 +498,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "processor:my_processor|alu:alu1"                                                                                                                                                ;
-+----------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port           ; Type   ; Severity ; Details                                                                                                                                                               ;
-+----------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; isNotEqual     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (5 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
-; isNotEqual[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
-; isLessThan     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (5 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
-; isLessThan[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
-; overflow       ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (5 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
-+----------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "processor:my_processor|alu:alu1"                                                          ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; isLessThan ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "processor:my_processor"                                                                     ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                             ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; address_dmem ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; data         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; wren         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------+
-; Port Connectivity Checks: "dmem:my_dmem"             ;
-+---------+--------+----------+------------------------+
-; Port    ; Type   ; Severity ; Details                ;
-+---------+--------+----------+------------------------+
-; address ; Input  ; Info     ; Explicitly unconnected ;
-; data    ; Input  ; Info     ; Explicitly unconnected ;
-; wren    ; Input  ; Info     ; Explicitly unconnected ;
-; q       ; Output ; Info     ; Explicitly unconnected ;
-+---------+--------+----------+------------------------+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clkDiv4:c1"                                                                            ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; clk_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -1529,22 +521,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 18                          ;
-; cycloneiii_ff         ; 16                          ;
-;     CLR               ; 1                           ;
-;     ENA CLR           ; 2                           ;
+; boundary_port         ; 55                          ;
+; cycloneiii_ff         ; 1026                        ;
+;     ENA CLR           ; 1013                        ;
 ;     plain             ; 13                          ;
-; cycloneiii_lcell_comb ; 31                          ;
-;     arith             ; 11                          ;
-;         2 data inputs ; 11                          ;
-;     normal            ; 20                          ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 2                           ;
-;         4 data inputs ; 14                          ;
-; cycloneiii_ram_block  ; 17                          ;
+; cycloneiii_lcell_comb ; 2168                        ;
+;     arith             ; 87                          ;
+;         2 data inputs ; 23                          ;
+;         3 data inputs ; 64                          ;
+;     normal            ; 2081                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 25                          ;
+;         3 data inputs ; 278                         ;
+;         4 data inputs ; 1776                        ;
+; cycloneiii_ram_block  ; 64                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.10                        ;
-; Average LUT depth     ; 2.24                        ;
+; Max LUT depth         ; 20.10                       ;
+; Average LUT depth     ; 17.02                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1553,7 +547,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:09     ;
 +----------------+--------------+
 
 
@@ -1563,9 +557,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Sat Nov 20 17:08:17 2021
+    Info: Processing started: Sun Nov 21 00:03:01 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off NewPC5 -c NewPC5
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file reg32.v
+    Info (12023): Found entity 1: reg32 File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/reg32.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file freqby2.v
     Info (12023): Found entity 1: freqBy2 File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/freqBy2.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file clkdiv4.v
@@ -1582,20 +578,17 @@ Info (12021): Found 1 design units, including 1 entities, in source file dmem.v
     Info (12023): Found entity 1: dmem File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/dmem.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file alu.v
     Info (12023): Found entity 1: alu File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/alu.v Line: 1
-Critical Warning (10846): Verilog HDL Instantiation warning at skeleton.v(27): instance has no name File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 27
-Critical Warning (10846): Verilog HDL Instantiation warning at skeleton.v(28): instance has no name File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 28
-Critical Warning (10846): Verilog HDL Instantiation warning at skeleton.v(29): instance has no name File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 29
 Info (12127): Elaborating entity "skeleton" for the top level hierarchy
-Info (12128): Elaborating entity "freqBy2" for hierarchy "freqBy2:comb_3" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 27
-Info (12128): Elaborating entity "clkDiv4" for hierarchy "clkDiv4:comb_4" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 28
-Info (12128): Elaborating entity "imem" for hierarchy "imem:my_imem" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 49
+Info (12128): Elaborating entity "freqBy2" for hierarchy "freqBy2:f1" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 27
+Info (12128): Elaborating entity "clkDiv4" for hierarchy "clkDiv4:c1" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 28
+Info (12128): Elaborating entity "imem" for hierarchy "imem:my_imem" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 48
 Info (12128): Elaborating entity "altsyncram" for hierarchy "imem:my_imem|altsyncram:altsyncram_component" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/imem.v Line: 82
 Info (12130): Elaborated megafunction instantiation "imem:my_imem|altsyncram:altsyncram_component" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/imem.v Line: 82
 Info (12133): Instantiated megafunction "imem:my_imem|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/imem.v Line: 82
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
-    Info (12134): Parameter "init_file" = "./mif_outputs/basicTestCases.mif"
+    Info (12134): Parameter "init_file" = "./mif_outputs/basic_test.mif"
     Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
@@ -1606,10 +599,10 @@ Info (12133): Instantiated megafunction "imem:my_imem|altsyncram:altsyncram_comp
     Info (12134): Parameter "widthad_a" = "12"
     Info (12134): Parameter "width_a" = "32"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ahb1.tdf
-    Info (12023): Found entity 1: altsyncram_ahb1 File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_ahb1" for hierarchy "imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated" File: c:/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "dmem" for hierarchy "dmem:my_dmem" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 64
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_q3b1.tdf
+    Info (12023): Found entity 1: altsyncram_q3b1 File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_q3b1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_q3b1" for hierarchy "imem:my_imem|altsyncram:altsyncram_component|altsyncram_q3b1:auto_generated" File: c:/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "dmem" for hierarchy "dmem:my_dmem" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 63
 Info (12128): Elaborating entity "altsyncram" for hierarchy "dmem:my_dmem|altsyncram:altsyncram_component" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/dmem.v Line: 86
 Info (12130): Elaborated megafunction instantiation "dmem:my_dmem|altsyncram:altsyncram_component" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/dmem.v Line: 86
 Info (12133): Instantiated megafunction "dmem:my_dmem|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/dmem.v Line: 86
@@ -1630,74 +623,16 @@ Info (12133): Instantiated megafunction "dmem:my_dmem|altsyncram:altsyncram_comp
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0jf1.tdf
     Info (12023): Found entity 1: altsyncram_0jf1 File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_0jf1" for hierarchy "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated" File: c:/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "regfile" for hierarchy "regfile:my_regfile" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 82
-Info (12128): Elaborating entity "processor" for hierarchy "processor:my_processor" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 108
-Warning (10036): Verilog HDL or VHDL warning at processor.v(96): object "is_sw" assigned a value but never read File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 96
-Warning (10036): Verilog HDL or VHDL warning at processor.v(96): object "is_lw" assigned a value but never read File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 96
-Warning (10036): Verilog HDL or VHDL warning at processor.v(96): object "is_blt" assigned a value but never read File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 96
-Warning (10036): Verilog HDL or VHDL warning at processor.v(96): object "jump_bne" assigned a value but never read File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 96
-Warning (10858): Verilog HDL warning at processor.v(97): object rd used but never assigned File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 97
-Warning (10858): Verilog HDL warning at processor.v(97): object rs used but never assigned File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 97
-Warning (10858): Verilog HDL warning at processor.v(98): object immediate used but never assigned File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 98
-Warning (10030): Net "rd" at processor.v(97) has no driver or initial value, using a default initial value '0' File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 97
-Warning (10030): Net "rs" at processor.v(97) has no driver or initial value, using a default initial value '0' File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 97
-Warning (10030): Net "immediate" at processor.v(98) has no driver or initial value, using a default initial value '0' File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 98
-Warning (10034): Output port "address_dmem" at processor.v(82) has no driver File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 82
-Warning (10034): Output port "data" at processor.v(83) has no driver File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 83
-Warning (10034): Output port "wren" at processor.v(84) has no driver File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 84
-Warning (10034): Output port "ctrl_writeEnable" at processor.v(88) has no driver File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 88
-Info (12128): Elaborating entity "alu" for hierarchy "processor:my_processor|alu:alu1" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 159
+Info (12128): Elaborating entity "regfile" for hierarchy "regfile:my_regfile" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 81
+Info (12128): Elaborating entity "processor" for hierarchy "processor:my_processor" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v Line: 109
+Info (12128): Elaborating entity "alu" for hierarchy "processor:my_processor|alu:alu1" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 172
 Warning (10270): Verilog HDL Case Statement warning at alu.v(25): incomplete case statement has no default case item File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/alu.v Line: 25
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[0]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 37
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[1]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 60
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[2]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 83
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[3]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 106
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[4]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 129
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[5]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 152
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[6]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 175
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[7]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 198
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[8]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 221
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[9]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 244
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[10]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 267
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[11]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 290
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[12]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 313
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[13]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 336
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[14]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 359
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[15]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 382
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[16]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 405
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[17]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 428
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[18]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 451
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[19]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 474
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[20]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 497
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[21]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 520
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[22]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 543
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[23]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 566
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[24]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 589
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[25]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 612
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[26]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 635
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[27]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 658
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[28]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 681
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[29]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 704
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[30]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 727
-        Warning (14320): Synthesized away node "dmem:my_dmem|altsyncram:altsyncram_component|altsyncram_0jf1:auto_generated|q_a[31]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_0jf1.tdf Line: 750
-        Warning (14320): Synthesized away node "imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated|q_a[12]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf Line: 299
-        Warning (14320): Synthesized away node "imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated|q_a[13]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf Line: 321
-        Warning (14320): Synthesized away node "imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated|q_a[14]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf Line: 343
-        Warning (14320): Synthesized away node "imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated|q_a[15]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf Line: 365
-        Warning (14320): Synthesized away node "imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated|q_a[16]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf Line: 387
-        Warning (14320): Synthesized away node "imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated|q_a[17]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf Line: 409
-        Warning (14320): Synthesized away node "imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated|q_a[18]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf Line: 431
-        Warning (14320): Synthesized away node "imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated|q_a[19]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf Line: 453
-        Warning (14320): Synthesized away node "imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated|q_a[20]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf Line: 475
-        Warning (14320): Synthesized away node "imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated|q_a[21]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf Line: 497
-        Warning (14320): Synthesized away node "imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated|q_a[22]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf Line: 519
-        Warning (14320): Synthesized away node "imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated|q_a[23]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf Line: 541
-        Warning (14320): Synthesized away node "imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated|q_a[24]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf Line: 563
-        Warning (14320): Synthesized away node "imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated|q_a[25]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf Line: 585
-        Warning (14320): Synthesized away node "imem:my_imem|altsyncram:altsyncram_component|altsyncram_ahb1:auto_generated|q_a[26]" File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/db/altsyncram_ahb1.tdf Line: 607
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "processor:my_processor|ctrl_readRegB[4]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 89
+    Warning (13049): Converted tri-state buffer "processor:my_processor|ctrl_readRegB[3]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 89
+    Warning (13049): Converted tri-state buffer "processor:my_processor|ctrl_readRegB[2]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 89
+    Warning (13049): Converted tri-state buffer "processor:my_processor|ctrl_readRegB[1]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 89
+    Warning (13049): Converted tri-state buffer "processor:my_processor|ctrl_readRegB[0]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/processor.v Line: 89
     Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegA[31]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
     Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegA[30]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
     Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegA[29]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
@@ -1730,26 +665,50 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegA[2]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
     Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegA[1]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
     Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegA[0]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[31]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[30]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[29]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[28]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[27]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[26]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[25]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[24]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[23]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[22]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[21]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[20]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[19]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[18]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[17]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[16]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[15]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[14]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[13]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[12]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[11]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[10]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[9]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[8]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[7]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[6]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[5]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[4]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[3]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[2]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[1]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
+    Warning (13049): Converted tri-state buffer "regfile:my_regfile|data_readRegB[0]" feeding internal logic into a wire File: C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/regfile.v Line: 9
 Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/output_files/NewPC5.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 66 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3300 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 31 logic cells
-    Info (21064): Implemented 17 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 102 warnings
-    Info: Peak virtual memory: 4964 megabytes
-    Info: Processing ended: Sat Nov 20 17:08:30 2021
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:28
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/output_files/NewPC5.map.smsg.
+    Info (21059): Implemented 53 output pins
+    Info (21061): Implemented 3181 logic cells
+    Info (21064): Implemented 64 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 72 warnings
+    Info: Peak virtual memory: 4975 megabytes
+    Info: Processing ended: Sun Nov 21 00:03:28 2021
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:54
 
 

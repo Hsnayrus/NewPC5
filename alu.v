@@ -23,13 +23,13 @@ module alu(data_operandA, data_operandB, ctrl_ALUopcode,
 			// Default state for other ctrl_ALUopcode states
 			{inner_cout, inner_result} = inner_A + inner_B;
 			case (ctrl_ALUopcode)
-				0 : {inner_cout, inner_result} = inner_A + inner_B;  // ADD
+				0 : {inner_cout, inner_result} = inner_A + inner_B;    // ADD
 				1 : {inner_cout, inner_result} = inner_A - inner_B;	// SUBTRACT
-				2 : inner_result = inner_A & inner_B;  			// AND
-				3 : inner_result = inner_A | inner_B;  			// OR
-				4 : inner_result = inner_A << ctrl_shiftamt;		// SLL
-				5 : inner_result = inner_A >>> ctrl_shiftamt;	// SRA
-			endcase
+				2 : inner_result = inner_A & inner_B;  			     // AND
+				3 : inner_result = inner_A | inner_B;  			    // OR
+				4 : inner_result = inner_A << ctrl_shiftamt;		   // SLL
+				5 : inner_result = inner_A >>> ctrl_shiftamt;	  // SRA
+			endcase 
 		end
 	
 endmodule

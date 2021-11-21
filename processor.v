@@ -94,34 +94,40 @@ module processor(
 	 
 	 wire clk2, clk4;
 	 wire is_rType, is_addi, is_sub, is_add, is_or, is_sll, is_sra, is_sw, is_lw, is_j, is_bne, is_jal, is_jr, is_blt, is_bex, is_setx, is_jiType, rstatus, jump_bne, addOverflow, subOverflow, addiOverflow;
-	 wire [4:0] Opcode, rd, rs, rt, shamt, ALU_op, isNotEqual, isLessThan, overflow;
+	 wire isNotEqual, isLessThan, overflow;
+	 wire [4:0] Opcode, rd, rs, rt, shamt, ALU_op;
 	 wire[15:0] immediate;
 	 wire[26:0] target; // target is jump address for branching
 	 wire[31:0] jump, targetExtended ,addressExtended, signExtended, data_operandA, data_operandB, data_result;
 	 
-	 
 	 assign Opcode    = q_imem[31:27];
-	 assign is_rType  = ~Opcode[4] && ~Opcode[3] && ~Opcode[2] && ~Opcode[1] && ~Opcode[0]; //00000
-	 assign is_addi   = ~Opcode[4] && ~Opcode[3] && Opcode[2]  && ~Opcode[1] && Opcode[0];  //00101
-	 assign is_sw     = ~Opcode[4] && ~Opcode[3] && Opcode[2]  && Opcode[1]  && Opcode[0];  //00111
-	 assign is_lw     = ~Opcode[4] && Opcode[3]  && ~Opcode[2] && ~Opcode[1] && ~Opcode[0]; //01000
-	 assign is_add    = is_rType && ~ALU_op[4] && ~ALU_op[3] && ~ALU_op[2] && ~ALU_op[1] && ~ALU_op[0]; // 00000
-	 assign is_sub    = is_rType && ~ALU_op[4] && ~ALU_op[3] && ~ALU_op[2] && ~ALU_op[1] && ALU_op[0];  // 00001 
-	 assign ALU_op    = is_rType? q_imem[6:2]  : 5'd0;   
-	 assign shamt     = is_rType? q_imem[11:7] : 5'd0; 
-	 assign is_j      = ~Opcode[4] && ~Opcode[3] && ~Opcode[2]&& ~Opcode[1] && Opcode[0]; //00001
-	 assign is_bne    = (~Opcode[4] && ~Opcode[3] && ~Opcode[2]&& Opcode[1] && ~Opcode[0]);//00010
-	 assign is_jal    = ~Opcode[4] && ~Opcode[3] && ~Opcode[2]&& Opcode[1] && Opcode[0]; // 00011
-	 assign is_jr     = ~Opcode[4] && ~Opcode[3] && Opcode[2]&& ~Opcode[1] && ~Opcode[0]; // 00100
-	 assign is_blt    = ~Opcode[4] && ~Opcode[3] && Opcode[2]&& Opcode[1] && ~Opcode[0]; // 00110
-	 assign is_bex    = Opcode[4] && ~Opcode[3] && Opcode[2]&& Opcode[1] && ~Opcode[0]; // 10110
-	 assign is_setx   = Opcode[4] && ~Opcode[3] && Opcode[2]&& ~Opcode[1] && Opcode[0]; // 10101
+	 assign is_rType  = ~Opcode[4] && ~Opcode[3] && ~Opcode[2] && ~Opcode[1] && ~Opcode[0];                    //00000
+	 assign is_addi   = ~Opcode[4] && ~Opcode[3] && Opcode[2]  && ~Opcode[1] && Opcode[0];                    //00101
+	 assign is_sw     = ~Opcode[4] && ~Opcode[3] && Opcode[2]  && Opcode[1]  && Opcode[0];                   //00111
+	 assign is_lw     = ~Opcode[4] && Opcode[3]  && ~Opcode[2] && ~Opcode[1] && ~Opcode[0];                 //01000
+	 assign is_add    = is_rType && ~ALU_op[4] && ~ALU_op[3] && ~ALU_op[2] && ~ALU_op[1] && ~ALU_op[0];    //00000
+	 assign is_sub    = is_rType && ~ALU_op[4] && ~ALU_op[3] && ~ALU_op[2] && ~ALU_op[1] && ALU_op[0];    //00001 
+	 assign is_j      = ~Opcode[4] && ~Opcode[3] && ~Opcode[2]&& ~Opcode[1] && Opcode[0];                //00001
+	 assign is_bne    = (~Opcode[4] && ~Opcode[3] && ~Opcode[2]&& Opcode[1] && ~Opcode[0]);             //00010
+	 assign is_jal    = ~Opcode[4] && ~Opcode[3] && ~Opcode[2]&& Opcode[1] && Opcode[0];               //00011
+	 assign is_jr     = ~Opcode[4] && ~Opcode[3] && Opcode[2]&& ~Opcode[1] && ~Opcode[0];             //00100
+	 assign is_blt    = ~Opcode[4] && ~Opcode[3] && Opcode[2]&& Opcode[1] && ~Opcode[0];             //00110
+	 assign is_bex    = Opcode[4] && ~Opcode[3] && Opcode[2]&& Opcode[1] && ~Opcode[0];             //10110
+	 assign is_setx   = Opcode[4] && ~Opcode[3] && Opcode[2]&& ~Opcode[1] && Opcode[0];            //10101
 	 
-	 assign addOverflow  = is_add && overflow;
-	 assign subOverflow  = is_sub && overflow;
+	 assign rd     = q_imem[26:22];
+	 assign rs     = q_imem[21:17];
+	 assign rt     = q_imem[16:12];
+	 assign shamt  = q_imem[11: 7];
+	 assign ALU_op = is_rType? q_imem[6:2]  : 5'h00;
+	 
+	 assign immediate = q_imem[15:0]; 
+	 
+	 assign addOverflow  = is_add  && overflow;
+	 assign subOverflow  = is_sub  && overflow;
 	 assign addiOverflow = is_addi && overflow;
 	 
-	 assign jump_bne  = is_bne && (data_readRegA != data_readRegB);
+	 assign jump_bne  = is_bne && isNotEqual;
 	 
 	 assign rstatus = ~(data_readRegA == 32'h00000000);
 	 assign is_jiType = is_j || is_jal || (is_bex && rstatus);
@@ -138,23 +144,30 @@ module processor(
 		pc <= jump;
 	 end
 	 
-	 assign address_imem = pc[11:0];
+	 assign ctrl_writeEnable = ~clock && (is_rType || is_addi || is_jal || is_setx || is_lw);
 	 
-	 assign jump = is_jiType ? targetExtended : (is_jr ? data_readRegA : /*(is_bne ? (signExtended + 1'b1) : */(addressExtended + 1'b1))/*)*/;
+	 assign address_imem  = pc[11:0];
 	 
-	 assign ctrl_readRegA = (is_bne || is_jr) ? rd : ((is_rType || is_addi) ? rs : 5'h1E); // in case of bex its 1E
+	 assign jump          = is_jiType ? targetExtended : (is_jr ? data_readRegA : (jump_bne ? (signExtended + 1'b1) : (addressExtended + 1'b1)));
 	 
-	 assign ctrl_readRegB = rs;                  // rs in case of bne	 
+	 assign ctrl_readRegA = (is_bne || is_jr || is_sw)  ? rd : ((is_rType || is_addi || is_lw) ? rs : 5'h1E); // in case of bex its 1E
 	 
-	 assign ctrl_writeReg = is_jal ? 5'h1F : (is_setx ? 5'h1E : rd); 
+	 assign ctrl_readRegB = (is_bne || is_blt) ? rs : (is_rType ? rt : 5'hzz);                  // rs in case of bne	 
+	 
+	 assign ctrl_writeReg = is_jal ? 5'h1F : (is_setx || overflow ? 5'h1E : (is_addi || is_rType || is_lw ? rd : 5'h00)); 
 	 
 	 assign data_operandA = data_readRegA;
 	 
-	 assign data_operandB = is_addi ? signExtended : data_readRegB;
+	 assign data_operandB = (is_addi || is_sw || is_lw) ? signExtended : data_readRegB;
 	 
-	 assign data_writeReg = is_jal ? (addressExtended + 1'b1) : (is_setx ? addressExtended : (addOverflow ? 32'd1 : (subOverflow ? 32'd2 : (addiOverflow ? 32'd3 : data_result))));
-	
+	 assign wren          = is_sw;
+	 
+	 assign data          = is_sw ? data_readRegA : 32'h00000000;
+	 
+	 assign data_writeReg = is_jal ? (addressExtended + 1'b1) : (is_setx ? targetExtended : (addOverflow ? 32'd1 : (subOverflow ? 32'd2 : (addiOverflow ? 32'd3 : (is_lw ? q_dmem : data_result)))));
+	  
+	 assign address_dmem  = (is_sw || is_lw) ? data_result[11:0] : 12'h000;	 
+	 
 	 //Instantiate the ALU module
-	 
 	 alu alu1(data_operandA, data_operandB, ALU_op, shamt, data_result, isNotEqual, isLessThan, overflow);
 endmodule

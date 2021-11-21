@@ -16,6 +16,15 @@ addi $10, $0, 345	# r10 = 345
 addi $11, $0, 567	# r11 = 567
 sw $10, 1($0)		# store 345 into address 1
 sw $11, 2($0)		# store 567 into address 2
+addi $10, $10, 1
+addi $11, $11, 2
+addi $10, $10, 1
+addi $11, $11, 2
+addi $10, $10, 1
+addi $11, $11, 2
+addi $10, $10, 1
+addi $11, $11, 2
+addi $10, $10, 1
+addi $11, $11, 2
 lw $12, 1($0)		# load 345 into r12
 lw $13, 2($0)		# load 567 into r13
- 
