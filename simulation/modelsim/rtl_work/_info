@@ -1,0 +1,96 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/simulation/modelsim
+vclk_div3
+Z1 !s110 1637541006
+!i10b 1
+!s100 d?dIDLF6d9?3>m;nQd:?31
+IJS`1114JJFJmY?;1>zWa@2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1637529406
+8C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/clk_div3.v
+FC:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/clk_div3.v
+L0 1
+Z3 OV;L;10.4d;61
+r1
+!s85 0
+31
+Z4 !s108 1637541006.000000
+!s107 C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/clk_div3.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5|C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/clk_div3.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work {+incdir+C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5}
+vclkDiv4
+R1
+!i10b 1
+!s100 3==?NGcLahiEJ1N:MibK01
+IecicPD=Zama<Kao@0GiBb0
+R2
+R0
+w1637442956
+8C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/clkDiv4.v
+FC:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/clkDiv4.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/clkDiv4.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5|C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/clkDiv4.v|
+!i113 1
+R5
+R6
+nclk@div4
+vfreqBy2
+R1
+!i10b 1
+!s100 42J938I1amXE36:CI5jlM1
+I;HF@@EH_NNzfBK`>KD?R11
+R2
+R0
+w1637441797
+8C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/freqBy2.v
+FC:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/freqBy2.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/freqBy2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5|C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/freqBy2.v|
+!i113 1
+R5
+R6
+nfreq@by2
+vskeleton
+R1
+!i10b 1
+!s100 37``;`EUaMUd9KWWKW4of0
+IRSI?zPceI]RbEz=>lz`Rl2
+R2
+R0
+w1637540455
+8C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v
+FC:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v
+L0 12
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5|C:/Users/Suryansh Jain/Desktop/Duke ECE/Semester 1/ECE 550D/Project Checkpoints/NewPC5/skeleton.v|
+!i113 1
+R5
+R6

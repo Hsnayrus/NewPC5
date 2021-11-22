@@ -94,7 +94,7 @@ module processor(
 	 
 	 wire clk2;
 	 wire is_rType, is_addi, is_sub, is_add, is_or, is_sll, is_sra, is_sw, is_lw, is_j, is_bne, is_jal, is_jr, is_blt, is_bex, is_setx, is_jiType, rstatus, jump_bne, addOverflow, subOverflow, addiOverflow;
-	 wire isNotEqual, isLessThan, overflow, jump_blt;
+	 wire isNotEqual, isLessThan, overflow, jump_blt, jump_jal;
 	 wire [4:0] Opcode, rd, rs, rt, shamt, ALU_op;
 	 wire[15:0] immediate;
 	 wire[26:0] target; // target is jump address for branching
@@ -129,6 +129,7 @@ module processor(
 	 
 	 assign jump_bne  = is_bne && isNotEqual;
 	 assign jump_blt  = is_blt && isLessThan;
+	 assign jump_jal  = is_jal && (jump == (pc - 1'b1));
 	 
 	 assign rstatus = ~(data_readRegA == 32'h00000000);
 	 assign is_jiType = is_j || is_jal || (is_bex && rstatus);
@@ -138,16 +139,14 @@ module processor(
 	 assign signExtended[15: 0] = immediate;
 	 assign signExtended[31:16] = immediate[15] ? 16'hFFFF : 16'h0000;
 	 assign addressExtended     = {20'h00000, address_imem};
-	 
-	 freqBy2(clock, reset, clk2);
-	 
+	
 	 reg[31:0] pc;
 	 
 	 always @(posedge clock) begin
 		 pc <= jump;
 	 end
 	 
-	 assign ctrl_writeEnable = ~clock && (is_rType || is_addi || is_setx || is_lw || is_jal);
+	 assign ctrl_writeEnable = ~clock && (is_rType || is_addi || is_setx || is_lw || is_jal );
 	 
 	 assign address_imem  = pc[11:0];
 	 
@@ -155,7 +154,7 @@ module processor(
 	 
 	 assign ctrl_readRegA = (is_bne || is_jr || is_sw || is_blt)  ? rd : ((is_rType || is_addi || is_lw) ? rs : 5'h1E); // in case of bex its 1E
 	 
-	 assign ctrl_readRegB = (is_bne || is_blt) ? rs : (is_rType ? rt : 5'hzz);                  // rs in case of bne	 
+	 assign ctrl_readRegB = (is_bne || is_blt) ? rs : (is_rType ? rt : (is_jal ? 5'h1F : 5'hzz));                  // rs in case of bne	 
 	 
 	 assign ctrl_writeReg = is_jal ? 5'h1F : (is_setx || overflow ? 5'h1E : (is_addi || is_rType || is_lw ? rd : 5'h00)); 
 	 
@@ -167,7 +166,7 @@ module processor(
 	 
 	 assign data          = is_sw ? data_readRegA : 32'h00000000;
 	 
-	 assign data_writeReg = is_jal ? (addressExtended + 1'b1) : (is_setx ? targetExtended : (addOverflow ? 32'd1 : (subOverflow ? 32'd2 : (addiOverflow ? 32'd3 : (is_lw ? q_dmem : data_result)))));
+	 assign data_writeReg = (is_jal) ? (addressExtended + 1'b1) : (is_setx ? targetExtended : (addOverflow ? 32'd1 : (subOverflow ? 32'd2 : (addiOverflow ? 32'd3 : (is_lw ? q_dmem : data_result)))));
 	  
 	 assign address_dmem  = (is_sw || is_lw) ? data_result[11:0] : 12'h000;	 
 	 
